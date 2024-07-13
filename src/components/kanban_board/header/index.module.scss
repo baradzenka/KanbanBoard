@@ -1,0 +1,24 @@
+
+.header {
+	min-height: 55px;
+	padding: 6px 22px 6px 20px;
+
+	display: flex;
+	column-gap: 16px;
+	align-items: center;
+	justify-content: space-between;
+	
+	background-color: #0067a3;
+
+	.title {
+		font-size: 28px;
+		color: #fff;
+
+		@media (max-width: 450px) {   /* <=450 */
+			font-size: 24px;
+		}
+		@media (max-width: 400px) {   /* <=400 */
+			font-size: 18px;
+		}
+	}
+}

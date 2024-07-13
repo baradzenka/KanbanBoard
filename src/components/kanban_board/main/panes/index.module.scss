@@ -1,0 +1,24 @@
+
+.panes {
+	padding: 20px 18px 30px;
+	flex-grow: 1;
+
+	column-gap: 2%;
+	row-gap: 15px;
+	background-color: #0079bf;
+
+	@media (min-width: 861px) {   /* >=861 */
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}	
+	@media (max-width: 860px) {   /* <=860 */
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: start;
+	}	
+	@media (max-width: 580px) {   /* <=580 */
+		grid-template-columns: 1fr;
+		row-gap: 20px;
+	}		
+}

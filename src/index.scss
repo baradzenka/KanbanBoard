@@ -1,0 +1,25 @@
+@import "variables";
+
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover,
+button:hover:not(:disabled) {
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+}
+
+
+body
+{
+	overflow-y: scroll;
+	font-family: var(--main-font);
+}
+

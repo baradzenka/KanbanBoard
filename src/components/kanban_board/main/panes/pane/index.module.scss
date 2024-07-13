@@ -1,0 +1,180 @@
+
+@mixin MaskImage($url) {
+	-webkit-mask-image: url($url);
+	mask-image: url($url);
+}
+
+
+.pane {
+	padding: 12px 0 10px 12px;
+
+	flex-grow: 1;
+	border-radius: 10px;
+	background-color: #ebecf0;
+
+	.title {
+		padding-bottom: 3px;
+		white-space: nowrap;
+		font-size: 18px;
+		color: #000;
+	}
+
+	.taskList {
+		padding-top: 7px;
+		padding-right: 12px;
+
+		display: flex;
+		flex-direction: column;
+		row-gap: 15px;
+
+		overflow-y: auto;
+
+		@media (min-width: 861px) {   /* >=861 */
+			max-height: calc(100vh - 207px);
+		}			
+
+		@supports selector(::-webkit-scrollbar) {
+			&::-webkit-scrollbar-track {
+				background-color: #fff;
+			}
+			&::-webkit-scrollbar {
+				width: 12px;
+				background-color: #fff;
+			}
+			&::-webkit-scrollbar-thumb {
+				border-radius: 5px;
+				background-color: #cbcbcb;
+			}
+		}
+
+		.taskListItem {
+			padding: 7px 8px;
+
+			border-radius: 5px;
+
+			white-space: pre-wrap;
+			overflow-wrap: anywhere;
+
+			font-size: 18px;
+			color: #000;
+			background-color: #fff;
+
+			&:hover {
+				background-color: #DEDEDE;
+			}
+		}
+
+		.addCartBtn,
+		.submitBtn {
+			margin-top: -3px;
+			width: fit-content;
+			border-radius: 5px;
+			white-space: nowrap;
+			font-size: 18px;
+		}
+		
+		.addCartBtn {
+			padding: 4px 7px 1px 5px;
+
+			text-align: left;
+			border: 1px solid transparent;
+			color: #5e6c84;
+			background-color: #ebecf0;
+
+			display: flex;
+			align-items: baseline;
+
+			&:focus {
+				border: 1px dotted #0079bf;
+				outline: none;
+			}
+			&:hover:not(:disabled) {
+				background-color: #fff;
+			}
+			&:active:not(:disabled) {
+				border: 1px solid #0079bf;
+			}
+			&:disabled {
+				color: #5E6C8480;
+			}
+
+			.addCartBtnImg {
+				margin-right: 4px;
+				width: 14px;
+				height: 14px;
+
+				@include MaskImage("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 6H8V1C8 0.448 7.552 0 7 0C6.448 0 6 0.448 6 1V6H1C0.448 6 0 6.448 0 7C0 7.552 0.448 8 1 8H6V13C6 13.552 6.448 14 7 14C7.552 14 8 13.552 8 13V8H13C13.552 8 14 7.552 14 7C14 6.448 13.552 6 13 6Z' fill='black'/%3E%3C/svg%3E");
+				background-color: #5E6C84;
+			}
+			&:disabled .addCartBtnImg {
+				background-color: #5E6C8480;
+			}
+		}
+
+		.submitBtn {
+			padding: 4px 20px 1px;
+
+			border: 1px solid transparent;
+			color: #fff;
+			background-color: #0079bf;
+
+			&:focus {
+				border: 1px dotted #ebecf0;
+				outline: none;
+			}
+			&:hover {
+				background-color: #0067a3;
+			}
+			&:active {
+				border: 1px solid #0067a3;
+			}
+		}
+
+		.newTaskTextArea {
+			padding-left: 7px;
+			padding-right: 7px;
+			min-height: 48px;
+
+			border-radius: 5px;
+			border: none;
+
+			resize: none;
+
+			font-family: var(--main-font);
+			font-size: 18px;
+
+			&:focus {
+				outline: none;
+			}			
+		}
+
+		.dropDownListOwner {
+			position: relative;
+
+			padding: 7px 8px;
+
+			border-radius: 5px;
+
+			font-size: 18px;
+			background-color: #fff;
+
+			&::before {
+				content: "_";
+				visibility: hidden;
+			}
+			&::after {
+				content: "";
+
+				position: absolute;
+				right: 4px;
+				top: 4px;
+				width: 30px;
+				height: 30px;
+
+				@include MaskImage("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' %3E%3Cpath d='M480-346.85 253.85-573 291-610.15l189 189 189-189L706.15-573 480-346.85Z'/%3E%3C/svg%3E");
+				background-color: #000;
+			}
+		}
+	}
+}
+
