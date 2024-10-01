@@ -18,9 +18,9 @@ const kanbanBoardProps: KanbanBoardProps = {
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
 	<React.StrictMode>
-		<ReactRouterDOM.BrowserRouter>
+		<ReactRouterDOM.HashRouter>
 			<KanbanBoard {...kanbanBoardProps}/>
-		</ReactRouterDOM.BrowserRouter>
+		</ReactRouterDOM.HashRouter>
 	</React.StrictMode>
 );
 

@@ -22,9 +22,9 @@ const kanbanBoardProps: KanbanBoardProps = {
 function Render(): HTMLElement
 {
 	return render(
-			<ReactRouterDOM.BrowserRouter>
+			<ReactRouterDOM.HashRouter>
 				<KanbanBoard {...kanbanBoardProps} />
-			</ReactRouterDOM.BrowserRouter>
+			</ReactRouterDOM.HashRouter>
 		).container;
 }
 
