@@ -13,7 +13,7 @@ import footerStyle from "./footer/index.module.scss";
 
 
 const kanbanBoardProps: KanbanBoardProps = {
-	title: "Awesome Kanban Board",
+	title: "Kanban Board",
 	menuOptions: ["Profile", "Log Out"],
 	user: "User",
 	panes: panesExample

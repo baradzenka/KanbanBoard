@@ -18,7 +18,7 @@ export function TaskDetails(): JSX.Element
 
 	let descStaticRef = React.useRef<HTMLDivElement>(null);
 	let descEditorRef = React.useRef<HTMLTextAreaElement>(null);
-	let descEditorPrimaryHeight = React.useRef<number>(0);   // первичная высота редактора описания.
+	let descEditorPrimaryHeight = React.useRef<number>(0);   // primary height of description editor.
 
 
 	const MakeDescStatic = React.useCallback((): JSX.Element => {
@@ -56,7 +56,7 @@ export function TaskDetails(): JSX.Element
 						SetEditMode(false);
 				};
 			const OnDocumentMouseDown = (e: MouseEvent): void => {
-					if(!descEditorRef.current!.contains(e.target as Node))   // нажатие за приделами textarea.
+					if(!descEditorRef.current!.contains(e.target as Node))   // click outside textarea.
 						SetEditMode(false);
 				};
 			document.addEventListener("keydown", OnDocumentKeyDown);

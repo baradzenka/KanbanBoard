@@ -18,8 +18,8 @@ export function HeaderMenu({options}: {options: string[]}): JSX.Element
 			const OnDocumentKeyDown = (e : KeyboardEvent): void => {
 				e.key==="Escape" && ShowMenu(false); };
 			const OnDocumentMouseDown = (e: MouseEvent): void => {
-				if(!dropDownListWrapperRef.current?.contains(e.target as Node) &&   // нажатие за приделами dropDownListWrapper.
-					!avatarRef.current?.contains(e.target as Node))   // нажатие за приделами аватара.
+				if(!dropDownListWrapperRef.current?.contains(e.target as Node) &&   // click outside dropDownListWrapper.
+					!avatarRef.current?.contains(e.target as Node))   // click outside the avatar.
 				{
 					ShowMenu(false);
 				}

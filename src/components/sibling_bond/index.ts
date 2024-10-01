@@ -1,10 +1,10 @@
 import React from "react";
 
 /*
-	Пользовательский хук, позволяющий дочерним компонентам, находящимся на одном уровне,
-	иметь доступ к данным соседних компонентов. Т.е. есть возможность напрямую
-	обращаться к их данным расположенным в SiblingT или вызывать объявленные в них
-	функции для совершения действий над соседними компонентами.
+	A custom hook that allows child components located at the same level
+	to have access to the data of neighboring components. That is,
+	it is possible to directly access their data located in SiblingT or
+	call functions declared in them to perform actions on neighboring components.
 */
 
 export type SiblingT<TData> =

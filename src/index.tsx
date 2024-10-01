@@ -9,7 +9,7 @@ import { KanbanBoardProps, KanbanBoard } from "./components/kanban_board";
 
 
 const kanbanBoardProps: KanbanBoardProps = {
-	title: "Awesome Kanban Board",
+	title: "Kanban Board",
 	menuOptions: ["Profile", "Log Out"],
 	user: "User",
 //	panes: panesExample

@@ -38,7 +38,7 @@ export function Pane(props: {name: string, myself: Sibling}): JSX.Element
 	});
 
 
-	props.myself.setData(data.current);   // передаём своему объекту Sibling ссылку на свои данные.
+	props.myself.setData(data.current);   // we pass our Sibling object a reference to our data.
 
 
 	const CreateTask = React.useCallback((taskName: string): Task => {
@@ -52,7 +52,7 @@ export function Pane(props: {name: string, myself: Sibling}): JSX.Element
 		props.myself.getPrevSiblingData(), [props.myself]);
 
 
-	const enum Mode { Default, EnterNewTask, SelectTask };   // режимы работы компонента.
+	const enum Mode { Default, EnterNewTask, SelectTask };   // the component operating modes.
 	const [mode, setMode] = React.useState<Mode>(Mode.Default);
 
 	const thisPaneRef = React.useRef<HTMLElement>(null);
@@ -86,7 +86,7 @@ export function Pane(props: {name: string, myself: Sibling}): JSX.Element
 			const OnDocumentKeyDown = (e : KeyboardEvent): void => {
 				e.key==="Escape" && Reset(); };
 			const OnDocumentMouseDown = (e: MouseEvent): void => {
-				if(!thisPaneRef.current?.contains(e.target as Node))   // нажатие за приделами Pane.
+				if(!thisPaneRef.current?.contains(e.target as Node))   // click outside Pane.
 					Reset();
 			};
 			document.addEventListener("keydown", OnDocumentKeyDown);
@@ -128,8 +128,8 @@ export function Pane(props: {name: string, myself: Sibling}): JSX.Element
 					ScrollToEnd();
 				};
 
-			const btnDisabled: boolean = GetPrevPane()?.GetTaskList().length===0 ||   // предыдущая панель существует и не содержит задач.
-				mode === Mode.SelectTask;   // раскрыто выпадающее меню для выбора задачи из предыдущей панели.
+			const btnDisabled: boolean = GetPrevPane()?.GetTaskList().length===0 ||   // the previous pane exists and does not contain any tasks.
+				mode === Mode.SelectTask;   // the drop-down menu for selecting a task from the previous pane is opened.
 			return (
 				<button type="button" className={style.addCartBtn} onClick={OnBtnClick} disabled={btnDisabled}>
 					<div className={style.addCartBtnImg}></div>
